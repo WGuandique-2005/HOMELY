@@ -48,7 +48,7 @@
     });
     nav.querySelectorAll('a').forEach(link => {
       const label = link.textContent.trim().replace(/\s+/g, ' ');
-      const index = sections.findIndex(([name]) => name === label);
+      const index = sections.findIndex(([name]) => label.endsWith(name));
       if (index < 0) return;
       link.href = resolve(sections[index][1]);
       link.classList.toggle('pitch-active', index === currentIndex);
